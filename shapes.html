@@ -1,0 +1,188 @@
+<HTML>
+	<head>
+		<style>
+		.box {
+  background-color: #218D9B;
+  height: 100px;
+  width: 100px;
+}
+.circle:before {
+  content: ' \25CF';
+  font-size: 200px;
+}
+.transform1 {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+}
+
+.transform1-active {
+  background-color: #45CEE0;
+  height: 200px;
+  width: 200px;
+}
+.transform {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+}
+
+.transform-active {
+  background-color: #45CEE0;
+  height: 200px;
+  width: 200px;
+}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+		
+$(document).ready(function () {
+        var small={width: "200px",height: "116px"};
+        var large={width: "400px",height: "232px"};
+        var count=1; 
+        $("#image1").css(small).on('click',function () { 
+            $(this).animate((count==1)?large:small);
+            count = 1-count;
+            $("#image2").hide();
+            $("#image3").hide();
+            $("#image4").hide();
+            var circleform = document.getElementById('circleform');
+			circleform.style.visibility='visible';
+        });
+        $("#image2").css(small).on('click',function () { 
+            $(this).animate((count==1)?large:small);
+            count = 1-count;
+            $("#image1").hide();
+            $("#image3").hide();
+            $("#image4").hide();
+            var squareform = document.getElementById('squareform');
+			squareform.style.visibility='visible';
+        });
+        $("#image3").css(small).on('click',function () { 
+            $(this).animate((count==1)?large:small);
+            count = 1-count;
+            $("#image2").hide();
+            $("#image1").hide();
+            $("#image4").hide();
+            var rectangleform = document.getElementById('rectangleform');
+			rectangleform.style.visibility='visible';
+        });
+        $("#image4").css(small).on('click',function () { 
+            $(this).animate((count==1)?large:small);
+            count = 1-count;
+            $("#image2").hide();
+            $("#image3").hide();
+            $("#image1").hide();
+            var triangleform = document.getElementById('triangleform');
+			triangleform.style.visibility='visible';
+        });
+    });
+$(document).ready(function () {
+$("#circleform").submit(function() {
+    if ($("input[type='submit']").val() == "Submit") {
+    	var radius = $("#radius").val();
+    	var area = radius * radius * 3.14;
+    	var perimeter = 2 * 3.14 * radius;
+        alert("Area = "+area+ " Perimeter = " + perimeter);
+        return false;
+    }
+});
+});
+$(document).ready(function () {
+$("#squareform").submit(function() {
+    if ($("input[type='submit']").val() == "Submit") {
+    	var side = $("#side").val();
+    	var area = side * side;
+    	var perimeter = 4 * side;
+        alert("Area = "+area+ " Perimeter = " + perimeter);
+        return false;
+    }
+});
+});
+$(document).ready(function () {
+$("#rectangleform").submit(function() {
+    if ($("input[type='submit']").val() == "Submit") {
+    	var length = $("#length").val();
+    	var breadth = $("#breadth").val();
+    	var area = breadth * length;
+    	var perimeter = 2*(length+breadth);
+        alert("Area = "+area+ " Perimeter = " + perimeter);
+        return false;
+    }
+});
+});
+$(document).ready(function () {
+$("#triangleform").submit(function() {
+    if ($("input[type='submit']").val() == "Submit") {
+    	var height = $("#height").val();
+    	var base = $("#base").val();
+    	var area = height * base;
+    	var perimeter = height;
+        alert("Area = "+area+ " Perimeter = " + perimeter);
+        return false;
+    }
+});
+});
+$(document).ready(function () {
+var circleform = document.getElementById('circleform');
+if(circleform.style.visibility='visible'){
+circleform.style.visibility='hidden';}
+var squareform = document.getElementById('squareform');
+squareform.style.visibility='hidden';
+var rectangleform = document.getElementById('rectangleform');
+rectangleform.style.visibility='hidden';
+var triangleform = document.getElementById('triangleform');
+triangleform.style.visibility='hidden';
+});
+
+</script>
+	</head>
+	
+	<body>
+<!-- <div class="box transform1">
+</div>
+<div class="circle transform">
+</div> -->
+<img src="circle.jpg" alt="Mountain View" style="width:304px;height:228px;" id="image1" class="smallcircle">
+<img src="square.jpg" alt="Mountain View" style="width:304px;height:304px;" id="image2" class="smallsquare">
+<img src="rectangle.png" alt="Mountain View" style="width:304px;height:228px;" id="image3" class="smallrectangle">
+<img src="triangle.png" alt="Mountain View" style="width:304px;height:228px;" id="image4" class="smalltriangle">
+<div>
+<form action="" id="circleform" style="visibility:hidden">
+  Radius:<br>
+  <input type="number" name="radius" value="Mickey" id="radius"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div>
+<form action="" id="squareform" style="visibility:hidden">
+  Side Length:<br>
+  <input type="number" name="side" value="" id="side"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div>
+<form action="" id="rectangleform" style="visibility:hidden">
+  Length:<br>
+  <input type="number" name="length" value="" id="length"><br>
+  Breadth:<br>
+  <input type="number" name="breadth" value="" id="breadth"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div>
+<form action="" id="triangleform" style="visibility:hidden">
+  Height:<br>
+  <input type="number" name="height" value="" id="height"><br>
+  Base:<br>
+  <input type="number" name="base" value="" id="base"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+</body>
+
+</HTML>
