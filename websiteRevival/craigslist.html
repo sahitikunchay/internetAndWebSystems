@@ -1,10 +1,10 @@
 <HTML>
   <head>
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Lily Script One' rel='stylesheet'>
 <style>
 body {
-    font-family: 'Poppins';font-size: 22px;
-    background-color: #eddab6;
+    font-family: 'Lily Script One';font-size: 22px;
+    background-color: #ffffff;
     display: block;
 }
 aside {
@@ -19,8 +19,8 @@ aside {
 </style>
 <body >
   <header style='text-align:center; font-size:50px; ' >
-    <h1><font color="#ab3334">craigslist.</font></h1>
-    <p style="font-size:20px; "><font color="#ab3334">Click on the map below to see popular categories in that city</font></p>
+    <h1><font color="#f74356">Craigslist.</font></h1>
+    <p style="font-size:20px; "><font color="#f74356  ">Click on the map below to see popular categories in that city</font></p>
   </header>
   <section>
   <article id ="map">
@@ -64,6 +64,7 @@ aside {
     });
     google.maps.event.addListener(marker, 'click', function() {
     window.location.href = this.url;
+    sessionStorage.setItem('city', this.title);
 });
   }
 }
