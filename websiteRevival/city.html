@@ -1,0 +1,265 @@
+<HTML>
+  <head>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Poppins';font-size: 22px;
+    background-color: #eddab6;
+    display: block;
+}
+aside {
+  display: block;
+}
+
+body,
+html {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #eddab6;
+  font-size: 22px;
+  font-family: 'Poppins', monospace;
+}
+@supports ((display: -ms-grid) or (display: grid)) {
+  body,
+  html {
+    display: block;
+  }
+}
+
+.message {
+  border: 1px solid #d2d0d0;
+  padding: 2em;
+  font-size: 1.7vw;
+  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+}
+@supports ((display: -ms-grid) or (display: grid)) {
+  .message {
+    display: none;
+  }
+}
+
+.section {
+  display: none;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 4rem;
+  }
+}
+@supports ((display: -ms-grid) or (display: grid)) {
+  .section {
+    display: block;
+  }
+}
+
+/*h1 {
+  font-size: 2rem;
+  margin: 0 0 1.5em;
+}*/
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: row dense;
+}
+
+.item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  box-sizing: border-box;
+  background: #0c9a9a;
+  color: #fff;
+  -ms-grid-column: auto;
+      grid-column-start: auto;
+  -ms-grid-row: auto;
+      grid-row-start: auto;
+  color: #fff;
+  background: url("https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
+  background-position: center;
+  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  cursor: pointer;
+  counter-increment: item-counter;
+}
+/*.item:nth-of-type(1){
+  background-image: url("C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/house.jpg");
+}*/
+
+.item:nth-of-type(3n) {
+  background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
+}
+.item:nth-of-type(4n) {
+  background-image: url("https://images.unsplash.com/photo-1490914327627-9fe8d52f4d90?dpr=2&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=");
+}
+.item:nth-of-type(5n) {
+  background-image: url("https://images.unsplash.com/photo-1476097297040-79e9e1603142?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+}
+.item:nth-of-type(6n) {
+  background-image: url("https://images.unsplash.com/photo-1464652149449-f3b8538144aa?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+}
+.item:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+/*.item:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}*/
+/*.item:hover:after {
+  opacity: 0;
+}*/
+.item--medium {
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+.item--large {
+  -ms-grid-row-span: 3;
+      grid-row-end: span 3;
+}
+.item--full {
+  grid-column-end: auto;
+}
+@media screen and (min-width: 768px) {
+  .item--full {
+    grid-column: 1/-1;
+    -ms-grid-row-span: 2;
+        grid-row-end: span 2;
+  }
+}
+.item__details {
+  position: relative;
+  z-index: 1;
+  padding: 15px;
+  color: #444;
+  background: #fff;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: #828282;
+}
+.item__details:before {
+  content: counter(item-counter);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-right: 0.5em;
+  color: #444;
+}
+</style>
+<body >
+  <header style='text-align:center; font-size:50px; ' >
+    <h1><font color="#ab3334">craigslist.</font></h1>
+  </header>
+<section class="section">
+  <section class="grid">
+    <section class="item item--large" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/house.jpg');">
+      <section class="item__details" >
+        housing
+      </section>
+    </section>
+    <section class="item item--medium"style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/furniture.jpg');">
+      <section class="item__details">
+        furniture
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/pets.jpg');">
+      <section class="item__details">
+        pets
+      </section>
+    </section>
+    <section class="item item--large" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/cars.jpg');">
+      <section class="item__details">
+        vehicles
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/vids.jpg');">
+      <section class="item__details">
+         video games
+      </section>
+    </section>
+    <section class="item item--full" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/baby.jpg');">
+      <section class="item__details">
+        baby stuff
+      </section>
+    </section>
+    <section class="item item--large" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/books.jpg');">
+      <section class="item__details">
+        books
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/phone.jpg');">
+      <section class="item__details">
+        phones
+      </section>
+    </section>
+    <section class="item" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/clothes.jpg');">
+      <section class="item__details">
+        clothes
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/art.jpg');">
+      <section class="item__details">
+        art
+      </section>
+    </section>
+    <section class="item" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/ring.jpg');">
+      <section class="item__details">
+        jewelry
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/tools.jpg');">
+      <section class="item__details">
+        tools
+      </section>
+    </section>
+    <section class="item item--medium" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/stat.jpg');">
+      <section class="item__details">
+        stationary
+      </section>
+    </section>
+    <section class="item item--large" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/plants.jpg');">
+      <section class="item__details">
+        plants
+      </section>
+    </section>
+    <section class="item" style="background-image: url('C:/Users/ACER/Desktop/Study Stuff/FINAL YEAR/Internet and Web Systems/websiteRevival/images/flowers.jpg');">
+      <section class="item__details">
+        flowers
+      </section>
+    </section>
+  </section>
+</section>
+</body>
+</html>
